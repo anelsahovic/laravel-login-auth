@@ -1,0 +1,1 @@
+<a class="px-2 text-amber-200-900 uppercase text-lg hover:text-blue-300 cursor-pointer" {{ $attributes }}">{{ $slot }}</a>
