@@ -17,17 +17,20 @@
        <div>
             <x-nav-link href="/">Home</x-nav-link>
             @auth
-                <x-nav-link>CONTENT PAGE</x-nav-link>
+                <x-nav-link href="/content">CONTENT PAGE</x-nav-link>
             @endauth
             
        </div>
        <div>
         @auth
-            <x-nav-link>LOG OUT</x-nav-link>
+            <form action="/logout" method="POST">
+                @csrf
+                <button class="px-2 text-amber-200-900 uppercase text-lg hover:text-blue-300 cursor-pointer">LOG OUT</button>
+            </form>
         @endauth
         @guest
-            <x-nav-link>LOG IN</x-nav-link>
-            <x-nav-link>REGISTER</x-nav-link>
+            <x-nav-link href="/login">LOG IN</x-nav-link>
+            <x-nav-link href="/register">REGISTER</x-nav-link>
         @endguest
             
        </div>
